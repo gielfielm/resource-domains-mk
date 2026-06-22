@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识库 · 竞彩网简介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f9fafc;
+      color: #1e293b;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page-wrap {
+      flex: 1;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    /* hero 简省，直接以目录式区隔 */
+    .site-marker {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 0.15rem 1rem;
+      margin-bottom: 1.5rem;
+      background: white;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #475569;
+      border-left: 4px solid #94a3b8;
+      padding-left: 1rem;
+      margin: 0.8rem 0 2.2rem;
+    }
+    /* 目录式卡片网格 */
+    .index-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2.2rem 0;
+    }
+    .entry-card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 0 0 1px #eef2f6;
+      transition: box-shadow 0.2s;
+    }
+    .entry-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 0 0 1px #dae0e8;
+    }
+    .entry-card h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #1e293b;
+    }
+    .entry-card h2::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 1.1rem;
+      background: #3b82f6;
+      border-radius: 4px;
+      margin-right: 0.25rem;
+    }
+    .entry-card p, .entry-card li {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .entry-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    .entry-card li {
+      padding: 0.2rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .entry-card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+    .inset-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .inset-link:hover {
+      border-bottom-color: #2563eb;
+    }
+    .badge-zone {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+      font-size: 0.92rem;
+      color: #1e293b;
+      border-left: 4px solid #475569;
+    }
+    .badge-zone strong {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .badge-zone p {
+      margin-top: 0.3rem;
+    }
+    .faq-mini {
+      margin: 2rem 0 0.5rem;
+    }
+    .faq-mini h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e9edf3;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 0.15rem;
+    }
+    .faq-a {
+      color: #475569;
+      font-size: 0.9rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2rem 0 1.2rem;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      color: #64748b;
+      text-align: center;
+      margin-top: 2.8rem;
+      border-top: 1px solid #e9edf3;
+      padding-top: 1.8rem;
+    }
+    .footer-note a {
+      color: #1e293b;
+      text-decoration: none;
+      border-bottom: 1px dotted #94a3b8;
+    }
+    .footer-note a:hover {
+      border-bottom-color: #1e293b;
+    }
+    @media (max-width: 500px) {
+      .page-wrap {
+        padding: 1.8rem 1.2rem 3rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .entry-card {
+        padding: 1.2rem 1.3rem;
+      }
+      .badge-zone {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="site-marker">知识库 · 站点用途速查</div>
+    <h1>竞彩网·功能速览</h1>
+    <div class="subhead">面向希望快速理解网站定位的使用者，以目录结构展示核心板块。</div>
+
+    <!-- 目录式卡片区块 代表不同知识区 -->
+    <div class="index-grid">
+      <div class="entry-card">
+        <h2>平台属性</h2>
+        <p>由官方体育彩票发行机构运营的互联网信息服务平台，提供竞猜型彩票的资讯、赛事数据及合规查询。用户可通过 <a href="https://sitechina-sporttery.com" class="inset-link">竞彩网</a> 获取赛事对阵、开奖结果等基础信息，所有服务均在中国体育彩票相关法规框架内开展。</p>
+      </div>
+      <div class="entry-card">
+        <h2>核心信息模块</h2>
+        <ul>
+          <li>足球/篮球赛事竞猜场次预告与即时数据</li>
+          <li>历史开奖号码及奖金对照查询</li>
+          <li>游戏规则、公益金用途说明</li>
+          <li>实体网点地图与合规购彩指引</li>
+        </ul>
+        <p style="margin-top:0.6rem;">上述模块可在网站首页导航直接定位，无需复杂操作即可筛选赛事与结果。</p>
+      </div>
+      <div class="entry-card">
+        <h2>用户场景举例</h2>
+        <ul>
+          <li>赛前：查阅当日竞猜场次、赔率浮动范围</li>
+          <li>赛后：核对开奖号码及对应奖金</li>
+          <li>日常：了解公益金分配比例与投注须知</li>
+          <li>研究：浏览球队交锋记录及积分榜排名</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="badge-zone">
+      <strong>⏺ 提示</strong>
+      <p>竞彩网不提供在线投注通道。所有购彩行为均须在注册地实体网点完成，未成年人不得参与。信息查询仅为用户提供参考，实际开奖以摇奖公告为准。</p>
+    </div>
+
+    <!-- 相关信息区 / FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>相关信息 · 常见理解点</h3>
+      <div class="faq-item">
+        <div class="faq-q">该网站与「中国体育彩票」是什么关系？</div>
+        <div class="faq-a">竞彩网是体彩官方旗下的竞猜型彩票信息网站，与体彩其他平台共享数据源，但功能侧重点不同——本网站主要面向竞猜玩法用户。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册才能使用基本查询？</div>
+        <div class="faq-a">查阅赛事、结果、规则等公开信息无需账户注册。部分个性化功能（如收藏赛事）可能需要登录，但非必需。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">数据更新频率如何？</div>
+        <div class="faq-a">赛事场次通常在赛前 24 小时内公布最终对阵；开奖结果在比赛结束后 1 小时内更新，以官方核定为准。</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <p style="font-size:0.93rem; color:#334155; line-height:1.7;">
+      若需全面了解竞猜彩票规则、赛事列表及历史数据，可直接访问  
+      <a href="https://sitechina-sporttery.com" class="inset-link">竞彩网</a>  
+      首页。所有信息均以网站页面实时显示为准，建议结合官方公告交叉核对。
+    </p>
+
+    <div class="footer-note">
+      <span>— 信息索引 · 仅用作用途说明 —</span><br>
+      <span style="opacity:0.5;">非商业展示 · 内容仅供参考</span>
+    </div>
+  </div>
+</body>
+</html>
