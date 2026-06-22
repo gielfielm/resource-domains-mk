@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 日常赛事信息指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f7f8fa;
+      color: #1e2a3a;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-hero {
+      background: linear-gradient(145deg, #0b1a2c 0%, #162b3f 100%);
+      padding: 4rem 2rem 3rem 2rem;
+      text-align: center;
+      color: #f0f4f9;
+      box-shadow: 0 4px 12px rgba(0,20,30,0.25);
+      border-bottom: 2px solid #3f6d8c;
+    }
+
+    .header-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #c9dbe9;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .header-hero .sub-accent {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      color: #b3d4ea;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      flex: 1;
+    }
+
+    .intro-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.5rem 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f6;
+    }
+
+    .intro-card h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #0b1a2c;
+    }
+
+    .intro-card p {
+      margin-bottom: 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    .intro-card a {
+      color: #1d6f8f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .intro-card a:hover {
+      border-bottom-color: #1d6f8f;
+      color: #09465b;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0 1.8rem 0;
+    }
+
+    .highlight-item {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      border: 1px solid #e7ecf1;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .highlight-item h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      color: #163a4b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .highlight-item h3::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #1d6f8f;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+
+    .highlight-item p {
+      font-size: 0.96rem;
+      color: #2c3f4f;
+      line-height: 1.55;
+    }
+
+    .scenario-block {
+      background: #f0f4f9;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      margin: 2.8rem 0;
+    }
+
+    .scenario-block h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0f293b;
+    }
+
+    .scenario-block ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .scenario-block ul li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      font-size: 1.01rem;
+      color: #1e2f3d;
+    }
+
+    .scenario-block ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0.2rem;
+      color: #3f6d8c;
+      font-weight: 300;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.4rem;
+      margin: 2.8rem 0 2rem 0;
+      border: 1px solid #e2e9f0;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #0f293b;
+      margin-bottom: 0.25rem;
+      font-size: 1.02rem;
+    }
+
+    .faq-item p {
+      margin-left: 0.5rem;
+      color: #2d3f4f;
+    }
+
+    .gentle-note {
+      background: #eaf2f8;
+      border-radius: 18px;
+      padding: 1.4rem 2rem;
+      color: #17425a;
+      font-size: 0.96rem;
+      border-left: 4px solid #3f6d8c;
+      margin: 2rem 0;
+    }
+
+    .gentle-note a {
+      color: #1d6f8f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: 0.9rem;
+      color: #667b8c;
+      border-top: 1px solid #dce4ea;
+      margin-top: 2.5rem;
+    }
+
+    .footer-note a {
+      color: #1d6f8f;
+      text-decoration: none;
+      border-bottom: 1px dashed #b0c6d4;
+    }
+
+    @media (max-width: 600px) {
+      .header-hero h1 {
+        font-size: 2rem;
+      }
+      .intro-card {
+        padding: 1.8rem 1.5rem;
+      }
+      .scenario-block {
+        padding: 1.6rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.5rem 1.2rem;
+      }
+      .highlights-grid {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-hero">
+    <h1>竞彩网 · 赛事信息与数据参考</h1>
+    <p>不止于开奖，更是日常查阅、对照与延伸了解赛事动态的实用工具。</p>
+    <span class="sub-accent">⚡ 赛事资讯 · 历史数据 · 辅助参考</span>
+  </header>
+
+  <main class="container">
+
+    <!-- 摘要 / 产品说明 -->
+    <section class="intro-card">
+      <h2>日常查询，信息对照</h2>
+      <p>
+        对于经常关注体育赛事的朋友来说，及时、稳定的信息渠道往往比结果本身更重要。<a href="https://site-web-sporttery.com">竞彩网</a>正是这样一个可以随时翻阅的资讯页面——它提供赛事数据、历史对照以及基础信息展示，适合在赛前赛后用于快速浏览。
+      </p>
+      <p>
+        无论是想回顾之前几轮的对阵情况，还是想横向对比不同赛事的走势，这里都能提供一个相对清晰的起点。页面内容以客观数据为主，避免渲染情绪或夸大解读，帮助使用者保持自己的判断节奏。
+      </p>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <h3>简洁查阅</h3>
+        <p>界面信息排布清晰，开奖号码、场次、时间等核心字段一目了然，不必在复杂菜单里反复跳转。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>多期对照</h3>
+        <p>支持按日期或期次筛选，方便追踪多组数据，发现细微变化或延续趋势，适合复盘与延伸思考。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>低干扰浏览</h3>
+        <p>页面不堆砌弹窗或强制性跳转，使用者可以按自己的节奏滑动、比较，保持专注。</p>
+      </div>
+    </div>
+
+    <!-- 使用场景（从日常切入） -->
+    <div class="scenario-block">
+      <h3>适合这样使用</h3>
+      <p style="margin-bottom:0.6rem; font-size:0.98rem; color:#1e3a4a;">不必把它当作预测工具，它更像一个安静的资料架——</p>
+      <ul>
+        <li>赛前翻阅近期对阵记录，了解两队过往表现。</li>
+        <li>赛后查看具体场次数据，与自己观察到的信息做对照。</li>
+        <li>横向浏览多个联赛或赛事类型，寻找值得延伸阅读的线索。</li>
+        <li>作为日常信息聚合页，替代碎片化的社交平台信息流。</li>
+      </ul>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>常见疑问 · 简要说明</h3>
+      <div class="faq-item">
+        <strong>数据更新频率如何？</strong>
+        <p>页面通常会在每期结束后及时刷新，但具体时效可能因数据源或维护安排略有延迟。建议在赛事密集日适当刷新页面以获取最新条目。</p>
+      </div>
+      <div class="faq-item">
+        <strong>可以看到历史旧期数据吗？</strong>
+        <p>可以。通过筛选功能可回溯一段时间内的场次信息，便于自己做纵向对比或简单统计。各期数据均保持一致的展示格式。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端浏览体验如何？</strong>
+        <p>页面采用响应式布局，在手机或平板上阅读、滑动、点按均比较流畅，表格与卡片会自动适配屏幕宽度。</p>
+      </div>
+    </div>
+
+    <!-- 可信但克制的提示 -->
+    <div class="gentle-note">
+      <p style="margin-bottom:0.5rem;"><strong>一点说明</strong></p>
+      <p>本页面只是信息展示与数据参考平台，不提供任何形式的承诺、诱导或保证。所有内容均来自公开可查的来源，请结合自身判断合理使用。若想直接浏览赛事数据，可前往 <a href="https://site-web-sporttery.com">竞彩网</a> 查阅最新信息。</p>
+    </div>
+
+    <!-- 额外段落：延伸阅读习惯 -->
+    <div style="background:#ffffff; border-radius:20px; padding:1.6rem 2.2rem; border:1px solid #e7ecf1; margin:1.5rem 0;">
+      <h3 style="font-weight:500; font-size:1.2rem; margin-bottom:0.6rem;">从信息到视角</h3>
+      <p style="color:#1d2e3c;">一次查询，一次对照，也许不会改变什么，但日积月累便能形成属于自己的一手资料库。保持温和的好奇，把<a href="https://site-web-sporttery.com">竞彩网</a>当作查阅链上的一环，与自己的笔记、观赛记录互为补充。这才是更长久的使用方式。</p>
+    </div>
+
+  </main>
+
+  <footer class="footer-note">
+    <p>基于公开数据整理 · 仅供个人日常查阅与延伸参考</p>
+    <p style="margin-top:0.6rem;">了解更多赛事资讯可留意 <a href="https://site-web-sporttery.com">竞彩网</a> 更新</p>
+  </footer>
+
+</body>
+</html>
